@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Your Health, Our Priority</h1>
+                <p class="lead mb-4">Book appointments with specialist doctors, order medicines, and manage your health records all in one place.</p>
+                <div class="search-box bg-white p-3 rounded shadow">
+                    <form id="searchForm" class="row g-2">
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" placeholder="Search for doctors..." id="doctorSearch">
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select" id="specialty">
+                                <option value="">All Specialties</option>
+                                <option value="cardiology">Cardiology</option>
+                                <option value="neurology">Neurology</option>
+                                <option value="pediatrics">Pediatrics</option>
+                                <option value="orthopedics">Orthopedics</option>
+                                <option value="gynecology">Gynecology</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-success w-100">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'images/hero-image.png' %}" alt="Healthcare" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Services</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-4">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-user-md fa-3x text-primary"></i>
+                    </div>
+                    <h4>Find a Doctor</h4>
+                    <p>Search and book appointments with specialist doctors near you.</p>
+                    <a href="/doctors/" class="btn btn-outline-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-4">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-pills fa-3x text-primary"></i>
+                    </div>
+                    <h4>Order Medicines</h4>
+                    <p>Order prescribed medicines from verified pharmacies and get home delivery.</p>
+                    <a href="/pharmacies/" class="btn btn-outline-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-4">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-notes-medical fa-3x text-primary"></i>
+                    </div>
+                    <h4>Medical Records</h4>
+                    <p>Store and manage all your medical records securely in one place.</p>
+                    <a href="/records/" class="btn btn-outline-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-4">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-truck-medical fa-3x text-primary"></i>
+                    </div>
+                    <h4>Ambulance Service</h4>
+                    <p>Quick access to ambulance services in your area.</p>
+                    <a href="/ambulance/" class="btn btn-outline-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-4">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-hand-holding-heart fa-3x text-primary"></i>
+                    </div>
+                    <h4>Fund Campaigns</h4>
+                    <p>Start or contribute to medical fundraising campaigns.</p>
+                    <a href="/campaigns/" class="btn btn-outline-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-4">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-flask fa-3x text-primary"></i>
+                    </div>
+                    <h4>Lab Tests</h4>
+                    <p>Book diagnostic tests from certified labs at home.</p>
+                    <a href="/diagnostics/" class="btn btn-outline-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Top Doctors Section -->
+<section class="top-doctors-section py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Top Specialists</h2>
+        <div class="row" id="topDoctors">
+            <!-- Doctors will be loaded dynamically via API -->
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-choose-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <img src="{% static 'images/why-choose.png' %}" alt="Why Choose Us" class="img-fluid">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="mb-4">Why Choose MediPlus?</h2>
+                <div class="feature-list">
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        <strong>Verified Doctors:</strong> All doctors are verified with valid credentials
+                    </div>
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        <strong>Secure Payments:</strong> Safe and secure bKash payment integration
+                    </div>
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        <strong>24/7 Support:</strong> Round-the-clock customer support
+                    </div>
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        <strong>Digital Prescriptions:</strong> Paperless prescriptions stored securely
+                    </div>
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        <strong>Location Based:</strong> Find services near your location with Google Maps
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">What Our Patients Say</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="rating mb-2 text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="card-text">"Excellent service! Found a great cardiologist and booked an appointment within minutes. The video consultation was smooth."</p>
+                        <h6 class="mb-0">- Rafiqul Islam</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="rating mb-2 text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="card-text">"Ordered medicines for my mother and got delivery within 2 hours. Very convenient and reliable."</p>
+                        <h6 class="mb-0">- Nasrin Sultana</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="rating mb-2 text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="card-text">"The digital prescription feature is amazing. All my medical history in one place. Highly recommended!"</p>
+                        <h6 class="mb-0">- Tanvir Ahmed</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- App Download Section -->
+<section class="app-download-section py-5 text-white" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div class="container text-center">
+        <h2 class="mb-4">Download Our Mobile App</h2>
+        <p class="lead mb-4">Get the MediPlus app for easy access to healthcare services on the go.</p>
+        <div class="app-buttons">
+            <a href="#" class="btn btn-light btn-lg me-3 mb-2">
+                <i class="fab fa-google-play me-2"></i>Google Play
+            </a>
+            <a href="#" class="btn btn-light btn-lg mb-2">
+                <i class="fab fa-apple me-2"></i>App Store
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(document).ready(function() {
+    // Load top doctors
+    $.ajax({
+        url: '/api/doctors/top/',
+        method: 'GET',
+        success: function(data) {
+            let html = '';
+            data.results.slice(0, 4).forEach(function(doctor) {
+                html += `
+                    <div class="col-md-3 mb-4">
+                        <div class="card">
+                            <img src="${doctor.profile_picture || '/static/images/default-doctor.jpg'}" class="card-img-top" alt="${doctor.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">Dr. ${doctor.name}</h5>
+                                <p class="card-text">${doctor.specialization}</p>
+                                <div class="rating mb-2">
+                                    ${'<i class="fas fa-star text-warning"></i>'.repeat(Math.floor(doctor.rating))}
+                                    <span class="ms-1">(${doctor.total_reviews})</span>
+                                </div>
+                                <a href="/doctors/${doctor.id}/" class="btn btn-primary">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            $('#topDoctors').html(html);
+        }
+    });
+    
+    // Handle search form
+    $('#searchForm').submit(function(e) {
+        e.preventDefault();
+        const search = $('#doctorSearch').val();
+        const specialty = $('#specialty').val();
+        window.location.href = `/doctors/?search=${search}&specialty=${specialty}`;
+    });
+});
+</script>
+{% endblock %}
