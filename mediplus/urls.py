@@ -22,14 +22,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.http import HttpResponseRedirect
+from django.views.generic import TemplateView
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-
-# Root view
-def root_redirect(request):
-    return HttpResponseRedirect('/swagger/')
 
 # API Documentation
 schema_view = get_schema_view(
@@ -46,8 +42,8 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    # Root redirect to API documentation
-    path('', root_redirect, name='home'),
+    # Home page
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
     
     # Admin
     path('admin/', admin.site.urls),

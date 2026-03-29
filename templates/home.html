@@ -1,0 +1,344 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MediPlus - Your Trusted Healthcare Platform">
+    <title>MediPlus - Healthcare Management System</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="{% static 'images/logo.svg' %}" alt="MediPlus Logo">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#doctors">Doctors</a></li>
+                    <li><a href="#appointments">Appointments</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h1>Your Health, Our Priority</h1>
+                    <p>Connect with experienced healthcare professionals and manage your appointments seamlessly.</p>
+                    <a href="#appointments" class="btn btn-secondary btn-lg">Book Appointment</a>
+                </div>
+                <div class="col-6">
+                    <img src="{% static 'images/hero-image.svg' %}" alt="Hero Image" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose MediPlus -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose MediPlus?</h2>
+                <p>Experience healthcare like never before with our innovative platform</p>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="feature">
+                        <div class="feature-icon">🏥</div>
+                        <h3>Professional Doctors</h3>
+                        <p>Access to a network of certified and experienced healthcare practitioners.</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="feature">
+                        <div class="feature-icon">📅</div>
+                        <h3>Easy Scheduling</h3>
+                        <p>Simple and intuitive appointment booking system available 24/7.</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="feature">
+                        <div class="feature-icon">💊</div>
+                        <h3>Pharmacy Services</h3>
+                        <p>Order medicines online and get them delivered to your doorstep.</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="feature">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure & Private</h3>
+                        <p>Your health data is encrypted and protected with industry-standard security.</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Quick Response</h3>
+                        <p>Get quick responses from healthcare professionals for your queries.</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="feature">
+                        <div class="feature-icon">🌐</div>
+                        <h3>24/7 Available</h3>
+                        <p>Access healthcare services anytime, anywhere with our mobile platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Doctors -->
+    <section id="doctors">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Doctors</h2>
+                <p>Experienced healthcare professionals ready to serve you</p>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="card doctor-card">
+                        <img src="{% static 'images/default-doctor.svg' %}" alt="Doctor" class="doctor-image">
+                        <div class="doctor-info">
+                            <div class="doctor-name">Dr. James Wilson</div>
+                            <div class="doctor-specialty">Cardiologist</div>
+                            <div class="doctor-rating">⭐⭐⭐⭐⭐ (4.8)</div>
+                            <a href="#appointments" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card doctor-card">
+                        <img src="{% static 'images/default-doctor.svg' %}" alt="Doctor" class="doctor-image">
+                        <div class="doctor-info">
+                            <div class="doctor-name">Dr. Sarah Anderson</div>
+                            <div class="doctor-specialty">Neurologist</div>
+                            <div class="doctor-rating">⭐⭐⭐⭐⭐ (4.9)</div>
+                            <a href="#appointments" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card doctor-card">
+                        <img src="{% static 'images/default-doctor.svg' %}" alt="Doctor" class="doctor-image">
+                        <div class="doctor-info">
+                            <div class="doctor-name">Dr. Michael Chen</div>
+                            <div class="doctor-specialty">Pediatrician</div>
+                            <div class="doctor-rating">⭐⭐⭐⭐⭐ (4.7)</div>
+                            <a href="#appointments" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointments Section -->
+    <section id="appointments">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book Your Appointment</h2>
+                <p>Schedule a consultation with our doctors at your convenience</p>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="fullname">Full Name</label>
+                                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="specialty">Select Doctor Specialty</label>
+                                    <select id="specialty" name="specialty" required>
+                                        <option value="">-- Select Specialty --</option>
+                                        <option value="cardiology">Cardiology</option>
+                                        <option value="neurology">Neurology</option>
+                                        <option value="pediatrics">Pediatrics</option>
+                                        <option value="dermatology">Dermatology</option>
+                                        <option value="orthopedics">Orthopedics</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Preferred Date</label>
+                                    <input type="date" id="date" name="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="time">Preferred Time</label>
+                                    <input type="time" id="time" name="time" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Additional Notes</label>
+                                    <textarea id="message" name="message" placeholder="Tell us about your symptoms or concerns..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Schedule Appointment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>How It Works</h3>
+                            <div class="mb-3">
+                                <h5>Step 1: Fill the Form</h5>
+                                <p>Provide your details and preferred doctor specialty.</p>
+                            </div>
+                            <div class="mb-3">
+                                <h5>Step 2: Choose Time</h5>
+                                <p>Select a convenient date and time for your appointment.</p>
+                            </div>
+                            <div class="mb-3">
+                                <h5>Step 3: Confirmation</h5>
+                                <p>Receive confirmation via email and SMS.</p>
+                            </div>
+                            <div class="mb-3">
+                                <h5>Step 4: Consultation</h5>
+                                <p>Meet with your doctor for professional healthcare advice.</p>
+                            </div>
+                            <div class="alert alert-info">
+                                💡 Tip: Have your medical history ready for a better consultation.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="text-center">
+                        <h3 style="color: var(--accent-color); font-size: 2.5rem;">10K+</h3>
+                        <p>Happy Patients</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="text-center">
+                        <h3 style="color: var(--accent-color); font-size: 2.5rem;">500+</h3>
+                        <p>Qualified Doctors</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="text-center">
+                        <h3 style="color: var(--accent-color); font-size: 2.5rem;">50K+</h3>
+                        <p>Appointments Done</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="text-center">
+                        <h3 style="color: var(--accent-color); font-size: 2.5rem;">99%</h3>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Have questions? We'd love to hear from you</p>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h4>📍 Location</h4>
+                            <p>123 Medical Center Street<br>New York, NY 10001</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h4>📞 Phone</h4>
+                            <p>+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h4>✉️ Email</h4>
+                            <p>info@mediplus.com<br>support@mediplus.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About MediPlus</h4>
+                    <p>Your trusted healthcare management platform delivering quality care and services.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#doctors">Doctors</a></li>
+                        <li><a href="#appointments">Appointments</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Book Appointment</a></li>
+                        <li><a href="#">Pharmacy</a></li>
+                        <li><a href="#">Medical Records</a></li>
+                        <li><a href="#">Campaigns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MediPlus - All Rights Reserved | <a href="#" style="color: var(--white);">Privacy Policy</a> | <a href="#" style="color: var(--white);">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
